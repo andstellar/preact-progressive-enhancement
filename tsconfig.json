@@ -1,0 +1,7 @@
+{
+  "extends": ["tsconfig-jsdoc/tsconfig.json"],
+  "compilerOptions": {
+    "declarationDir": "./dist",
+  },
+  "include": ["lib/**/*.js"]
+}

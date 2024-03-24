@@ -1,0 +1,56 @@
+{
+  "name": "preact-progressive-enhancement",
+  "version": "1.0.1",
+  "description": "This package is used for progressive enhancement of web components during SSR.",
+  "author": "&tellar Company",
+  "license": "ISC",
+  "keywords": [
+    "preact",
+    "web components",
+    "progressive enhancement",
+    "ssr",
+    "partial hydration",
+    "isomorphic",
+    "hydrate",
+    "custom elements"
+  ],
+  "type": "module",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": "./lib/index.js"
+  },
+  "scripts": {
+    "build": "esbuild .\\lib\\index.js --outfile=dist\\index.js --minify --bundle",
+    "bundle": "pnpm run gen:types && pnpm run build",
+    "check": "pnpm run check:types && pnpm run check:lint && pnpm run check:format",
+    "check:format": "prettier --check .",
+    "check:lint": "eslint lib",
+    "check:types": "tsc",
+    "dev": "web-dev-server --open --watch",
+    "fix": "pnpm run fix:lint && pnpm run fix:format",
+    "fix:format": "prettier --write .",
+    "fix:lint": "eslint lib --fix",
+    "gen:types": "tsc",
+    "test": "web-test-runner test/**/*.test.js --node-resolve"
+  },
+  "devDependencies": {
+    "@esm-bundle/chai": "4.3.4-fix.0",
+    "@types/preact-custom-element": "^4.0.4",
+    "@web/test-runner": "^0.18.1",
+    "@web/test-runner-commands": "^0.9.0",
+    "esbuild": "^0.20.2",
+    "eslint": "^8.57.0",
+    "preact-iso": "^2.4.0",
+    "preact-render-to-string": "^6.4.1",
+    "prettier": "^3.2.5",
+    "tsconfig-jsdoc": "^1.0.1",
+    "typescript": "^5.4.3",
+    "typescript-eslint": "^7.3.1"
+  },
+  "dependencies": {
+    "htm": "^3.1.1",
+    "preact": "^10.20.1",
+    "preact-custom-element": "^4.3.0"
+  }
+}
