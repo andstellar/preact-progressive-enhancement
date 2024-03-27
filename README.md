@@ -67,3 +67,6 @@ In any HTML, both of these will be hydrated properly in the browser:
 
 <script type="module" src="/components/my-component.js"></script>
 ```
+
+## Island architecture
+Consider using this with the [`is-land` component](https://github.com/11ty/is-land) for improved performance with no client experience compromise.
